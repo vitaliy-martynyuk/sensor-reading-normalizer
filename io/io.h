@@ -6,14 +6,14 @@
 using SensorType = char;
 using TempRawValue = std::int32_t;
 using VoltageRawValue = float;
-using RercentRawValue = std::uint8_t;
+using PercentRawValue = std::uint8_t;
 
 namespace io
 {
 	SensorType getSensorType();
 	TempRawValue getTempRawValue();
 	VoltageRawValue getVoltageRawValue();
-	RercentRawValue getRercentRawValue();
+	PercentRawValue getPercentRawValue();
 
 	namespace helpers
 	{

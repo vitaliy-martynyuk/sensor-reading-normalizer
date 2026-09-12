@@ -38,10 +38,10 @@ namespace io
 		return input;
 	}
 
-	RercentRawValue getRercentRawValue()
+	PercentRawValue getPercentRawValue()
 	{
 		cout << "Enter raw sensor value: ";
-		RercentRawValue input{};
+		PercentRawValue input{};
 		cin >> input;
 
 		return input;
@@ -53,6 +53,10 @@ namespace io
 		{
 			const bool hasUnextractedInput{ !cin.eof() && cin.peek() != '\n' };
 			if (!cin || hasUnextractedInput) {
+				if (cin.eof()) {
+					std::exit(1);
+				}
+
 				cin.clear();
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
