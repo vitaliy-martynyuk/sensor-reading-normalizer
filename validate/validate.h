@@ -2,7 +2,6 @@
 #define VALIDATE_H
 
 #include "../io/io.h"
-#include "../consts/consts.h"
 
 namespace validate
 {

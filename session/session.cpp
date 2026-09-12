@@ -1,7 +1,6 @@
 #include "session.h"
 #include "../io/io.h"
 #include "../validate/validate.h"
-#include "../consts/consts.h"
 #include <iostream>
 
 namespace session

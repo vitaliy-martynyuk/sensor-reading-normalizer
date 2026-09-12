@@ -1,6 +1,5 @@
 #include "session/session.h"
 #include "consts/consts.h"
-#include <iostream>
 #include <cassert>
 
 int main()
