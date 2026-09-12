@@ -31,9 +31,10 @@ scaffolding, not the focus.
 
 ```
 main.cpp                    // program entry point, orchestrates the flow
+types/
+  types.h                   // domain type aliases (TempRawValue, NormalizedValue, etc.)
 io/
-  io.h / io.cpp             // reading raw input, printing errors/results,
-                            //   and stream-failure recovery
+  io.h / io.cpp             // reading raw input, printing errors/results, and stream-failure recovery
 validate/
   validate.h / .cpp         // isXValid() checks for each sensor's raw value
 session/
@@ -73,7 +74,10 @@ Normalized reading: 21.5
 ## Notes
 
 `TempRawValue`, `VoltageRawValue`, `PercentRawValue`, and `NormalizedValue`
-are named type aliases used throughout function signatures to keep each
+are named type aliases, kept in their own `types.h` rather than bundled
+into `io.h`, since they're domain vocabulary shared by `validate` and
+`session` — neither of which has any actual dependency on `io`'s
+functions. They're used throughout function signatures to keep each
 sensor's native representation visible at the point of use. The percent
 sensor's raw value is read as a plain `int` and validated against its
 real 0–255 range *before* being narrowed down to `PercentRawValue`
