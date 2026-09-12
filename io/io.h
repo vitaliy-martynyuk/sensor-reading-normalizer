@@ -16,6 +16,14 @@ namespace io
 	VoltageRawValue getVoltageRawValue();
 	PercentRawValue getPercentRawValue();
 
+	namespace errors
+	{
+		void printGetSensorTypeError();
+		void printGetTempRawValue();
+		void printGetVoltageRawValue();
+		void printGetPercentRawValue();
+	}
+
 	namespace helpers
 	{
 		bool recoverInputStream();

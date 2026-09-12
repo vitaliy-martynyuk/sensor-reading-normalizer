@@ -14,7 +14,7 @@ namespace session
 			SensorType type{ io::getSensorType() };
 
 			if (io::helpers::recoverInputStream() || !validate::isSensorTypeValid(type)) {
-				cout << "Invalid sensor type! (must be T = Temp millidegrees, V = Voltage, P = Percent byte)\n";
+				io::errors::printGetSensorTypeError();
 				continue;
 			}
 
@@ -30,7 +30,7 @@ namespace session
 			TempRawValue value{ io::getTempRawValue() };
 
 			if (io::helpers::recoverInputStream() || !validate::isTempRawValueValid(value)) {
-				cout << "Invalid raw value for Temperature (millidegrees) sensor (expected 0-999999)\n";
+				io::errors::printGetTempRawValue();
 				continue;
 			}
 
@@ -46,7 +46,7 @@ namespace session
 			VoltageRawValue value{ io::getVoltageRawValue() };
 
 			if (io::helpers::recoverInputStream() || !validate::isVoltageRawValueValid(value)) {
-				cout << "Invalid raw value for Voltage sensor (expected 0.01-99.9)\n";
+				io::errors::printGetVoltageRawValue();
 				continue;
 			}
 
@@ -62,7 +62,7 @@ namespace session
 			PercentRawValue value{ io::getPercentRawValue() };
 
 			if (io::helpers::recoverInputStream() || !validate::isPercentRawValueValid(value)) {
-				cout << "Invalid raw value for Percent sensor (expected 0-255)\n";
+				io::errors::printGetPercentRawValue();
 				continue;
 			}
 

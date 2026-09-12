@@ -51,6 +51,29 @@ namespace io
 		return input;
 	}
 
+	namespace errors
+	{
+		void printGetSensorTypeError()
+		{
+			cout << "Invalid sensor type! (must be T = Temp millidegrees, V = Voltage, P = Percent byte)\n";
+		}
+
+		void printGetTempRawValue()
+		{
+			cout << "Invalid raw value for Temperature (millidegrees) sensor (expected 0-999999)\n";
+		}
+
+		void printGetVoltageRawValue()
+		{
+			cout << "Invalid raw value for Voltage sensor (expected 0.01-99.9)\n";
+		}
+
+		void printGetPercentRawValue()
+		{
+			cout << "Invalid raw value for Percent sensor (expected 0-255)\n";
+		}
+	}
+
 	namespace helpers
 	{
 		bool recoverInputStream()
