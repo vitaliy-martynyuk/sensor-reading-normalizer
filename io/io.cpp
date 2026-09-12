@@ -1,6 +1,7 @@
 #include "io.h"
 #include <iostream>
 #include <limits>
+#include <cstdlib>
 
 namespace io
 {
@@ -19,10 +20,28 @@ namespace io
 		return input;
 	}
 
-	RawSensorValue getSensorRawValue()
+	TempRawValue getTempRawValue()
 	{
 		cout << "Enter raw sensor value: ";
-		RawSensorValue input{};
+		TempRawValue input{};
+		cin >> input;
+
+		return input;
+	}
+
+	VoltageRawValue getVoltageRawValue()
+	{
+		cout << "Enter raw sensor value: ";
+		VoltageRawValue input{};
+		cin >> input;
+
+		return input;
+	}
+
+	RercentRawValue getRercentRawValue()
+	{
+		cout << "Enter raw sensor value: ";
+		RercentRawValue input{};
 		cin >> input;
 
 		return input;
@@ -34,10 +53,6 @@ namespace io
 		{
 			const bool hasUnextractedInput{ !cin.eof() && cin.peek() != '\n' };
 			if (!cin || hasUnextractedInput) {
-				if (cin.eof()) {
-					std::exit(1);
-				}
-
 				cin.clear();
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
