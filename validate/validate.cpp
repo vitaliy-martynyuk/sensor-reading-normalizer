@@ -21,11 +21,11 @@ namespace validate
 
 	bool isVoltageRawValueValid(VoltageRawValue value)
 	{
-		return (value > static_cast<VoltageRawValue>(0.0))
+		return (value >= static_cast<VoltageRawValue>(0.01))
 			&& (value <= static_cast<VoltageRawValue>(99.9));
 	}
 
-	bool isPercentRawValueValid(PercentRawValue value)
+	bool isPercentRawValueValid(int value)
 	{
 		return (value >= 0) && (value <= 255);
 	}

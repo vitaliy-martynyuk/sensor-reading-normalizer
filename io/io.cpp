@@ -10,9 +10,13 @@ namespace io
 	using std::numeric_limits;
 	using std::streamsize;
 
-	SensorType getSensorType()
+	void start()
 	{
 		cout << "=== Sensor Reading Normalizer ===\n";
+	}
+
+	SensorType getSensorType()
+	{
 		cout << "Select sensor type (T = Temp millidegrees, V = Voltage, P = Percent byte): ";
 		SensorType input{};
 		cin >> input;
@@ -38,13 +42,36 @@ namespace io
 		return input;
 	}
 
-	PercentRawValue getPercentRawValue()
+	int getPercentRawValue()
 	{
 		cout << "Enter raw sensor value: ";
-		PercentRawValue input{};
+		int input{};
 		cin >> input;
 
 		return input;
+	}
+
+	namespace errors
+	{
+		void printGetSensorTypeError()
+		{
+			cout << "Invalid sensor type! (must be T = Temp millidegrees, V = Voltage, P = Percent byte)\n";
+		}
+
+		void printGetTempRawValue()
+		{
+			cout << "Invalid raw value for Temperature (millidegrees) sensor (expected 0-999999)\n";
+		}
+
+		void printGetVoltageRawValue()
+		{
+			cout << "Invalid raw value for Voltage sensor (expected 0.01-99.9)\n";
+		}
+
+		void printGetPercentRawValue()
+		{
+			cout << "Invalid raw value for Percent sensor (expected 0-255)\n";
+		}
 	}
 
 	namespace helpers
