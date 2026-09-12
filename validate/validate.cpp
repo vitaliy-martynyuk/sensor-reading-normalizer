@@ -16,8 +16,7 @@ namespace validate
 
 	bool isTempRawValueValid(TempRawValue value)
 	{
-		return (value >= static_cast<TempRawValue>(0))
-			&& (value <= static_cast<TempRawValue>(999999));
+		return (value >= 0) && (value <= 999999);
 	}
 
 	bool isVoltageRawValueValid(VoltageRawValue value)
@@ -26,9 +25,8 @@ namespace validate
 			&& (value <= static_cast<VoltageRawValue>(99.9));
 	}
 
-	bool isPercentRawValue(PercentRawValue value)
+	bool isPercentRawValueValid(PercentRawValue value)
 	{
-		return (value >= static_cast<PercentRawValue>(0))
-			&& (value <= static_cast<PercentRawValue>(255));
+		return (value >= 0) && (value <= 255);
 	}
 }
