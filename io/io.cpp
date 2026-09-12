@@ -64,12 +64,12 @@ namespace io
 			return;
 		case constants::type::tempCode:
 			convertedValue = value / static_cast<NormalizedValue>(1000);
-			cout << "Conversion: " << value << " millidegrees -> " << convertedValue << " degrees";
+			cout << "Conversion: " << value << " millidegrees -> " << convertedValue << " degrees\n";
 			cout << "Normalized reading: " << convertedValue << '\n';
 			return;
 		case constants::type::voltageCode:
 			convertedValue = value;
-			cout << "Conversion: " << convertedValue << " V -> " << convertedValue << '\n';
+			cout << "Conversion: " << convertedValue << " V -> " << convertedValue << " (already in target units, no scaling)\n";
 			cout << "Normalized reading: " << convertedValue << '\n';
 			return;
 		default:
