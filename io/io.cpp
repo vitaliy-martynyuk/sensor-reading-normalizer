@@ -10,9 +10,13 @@ namespace io
 	using std::numeric_limits;
 	using std::streamsize;
 
-	SensorType getSensorType()
+	void start()
 	{
 		cout << "=== Sensor Reading Normalizer ===\n";
+	}
+
+	SensorType getSensorType()
+	{
 		cout << "Select sensor type (T = Temp millidegrees, V = Voltage, P = Percent byte): ";
 		SensorType input{};
 		cin >> input;

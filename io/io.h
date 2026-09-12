@@ -10,6 +10,7 @@ using PercentRawValue = std::uint8_t;
 
 namespace io
 {
+	void start();
 	SensorType getSensorType();
 	TempRawValue getTempRawValue();
 	VoltageRawValue getVoltageRawValue();
