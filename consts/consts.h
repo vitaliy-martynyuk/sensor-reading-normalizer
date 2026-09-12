@@ -9,9 +9,9 @@ namespace constants
 
 	namespace type
 	{
-		constexpr char tempCode{ 'T' };
-		constexpr char voltageCode{ 'V' };
-		constexpr char percentCode{ 'P' };
+		constexpr auto tempCode{ 'T' };
+		constexpr auto voltageCode{ 'V' };
+		constexpr auto percentCode{ 'P' };
 
 		constexpr string_view tempLabel{ "Temperature (millidegrees)" };
 		constexpr string_view voltageLabel{ "Voltage" };

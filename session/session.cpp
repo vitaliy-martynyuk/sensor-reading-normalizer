@@ -7,17 +7,17 @@
 namespace session
 {
 	using std::cout;
+	using io::helpers::recoverInputStream;
 
 	SensorType setSensorType()
 	{
 		while (true) {
 			SensorType type{ io::getSensorType() };
 
-			if (io::helpers::recoverInputStream() || !validate::isSensorTypeValid(type)) {
+			if (recoverInputStream() || !validate::isSensorTypeValid(type)) {
 				io::errors::printGetSensorTypeError();
 				continue;
 			}
-
 			cout << '\n';
 
 			return type;
@@ -29,11 +29,10 @@ namespace session
 		while (true) {
 			TempRawValue value{ io::getTempRawValue() };
 
-			if (io::helpers::recoverInputStream() || !validate::isTempRawValueValid(value)) {
+			if (recoverInputStream() || !validate::isTempRawValueValid(value)) {
 				io::errors::printGetTempRawValue();
 				continue;
 			}
-
 			cout << '\n';
 
 			return value;
@@ -45,11 +44,10 @@ namespace session
 		while (true) {
 			VoltageRawValue value{ io::getVoltageRawValue() };
 
-			if (io::helpers::recoverInputStream() || !validate::isVoltageRawValueValid(value)) {
+			if (recoverInputStream() || !validate::isVoltageRawValueValid(value)) {
 				io::errors::printGetVoltageRawValue();
 				continue;
 			}
-
 			cout << '\n';
 
 			return value;
@@ -61,11 +59,10 @@ namespace session
 		while (true) {
 			int value{ io::getPercentRawValue() };
 
-			if (io::helpers::recoverInputStream() || !validate::isPercentRawValueValid(value)) {
+			if (recoverInputStream() || !validate::isPercentRawValueValid(value)) {
 				io::errors::printGetPercentRawValue();
 				continue;
 			}
-
 			cout << '\n';
 
 			return static_cast<PercentRawValue>(value);
