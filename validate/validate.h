@@ -1,0 +1,15 @@
+#ifndef VALIDATE_H
+#define VALIDATE_H
+
+#include "../io/io.h"
+#include "../consts/consts.h"
+
+namespace validate
+{
+	bool isSensorTypeValid(SensorType type);
+	bool isTempRawValueValid(TempRawValue value);
+	bool isVoltageRawValueValid(VoltageRawValue value);
+	bool isPercentRawValueValid(PercentRawValue value);
+}
+
+#endif

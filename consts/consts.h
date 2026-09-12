@@ -13,7 +13,7 @@ namespace constants
 		constexpr char voltageCode{ 'V' };
 		constexpr char percentCode{ 'P' };
 
-		constexpr string_view tempLabel{ "Temperature" };
+		constexpr string_view tempLabel{ "Temperature (millidegrees)" };
 		constexpr string_view voltageLabel{ "Voltage" };
 		constexpr string_view percentLabel{ "Percent" };
 	}
