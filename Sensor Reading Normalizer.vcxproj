@@ -154,6 +154,7 @@
     <ClInclude Include="consts\consts.h" />
     <ClInclude Include="io\io.h" />
     <ClInclude Include="session\session.h" />
+    <ClInclude Include="types\types.h" />
     <ClInclude Include="validate\validate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

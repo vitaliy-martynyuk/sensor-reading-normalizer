@@ -1,5 +1,6 @@
 #include "io.h"
 #include "../consts/consts.h"
+#include "../types/types.h"
 #include <iostream>
 #include <limits>
 #include <cstdlib>

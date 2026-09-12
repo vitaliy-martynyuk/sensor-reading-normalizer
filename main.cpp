@@ -1,5 +1,7 @@
 #include "session/session.h"
+#include "io/io.h"
 #include "consts/consts.h"
+#include "types/types.h"
 #include <cassert>
 
 int main()

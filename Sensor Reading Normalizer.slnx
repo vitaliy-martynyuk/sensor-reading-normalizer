@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Sensor Reading Normalizer.vcxproj" />
+  <Project Path="Sensor Reading Normalizer.vcxproj" Id="11cdafd9-ece0-40c2-acae-620e86b5b628" />
 </Solution>

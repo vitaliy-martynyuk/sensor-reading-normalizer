@@ -21,12 +21,27 @@
     <ClCompile Include="io\io.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="session\session.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="validate\validate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="io\io.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="consts\consts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="session\session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="validate\validate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="types\types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

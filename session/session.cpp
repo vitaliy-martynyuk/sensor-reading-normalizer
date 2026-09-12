@@ -1,5 +1,6 @@
 #include "session.h"
 #include "../io/io.h"
+#include "../types/types.h"
 #include "../validate/validate.h"
 #include <iostream>
 
