@@ -24,7 +24,7 @@ int main()
 		assert(false && "Invalid sensor type");
 	}
 
-	std::cout << type << ' ' << value << '\n';
+	io::printSensorConversion(value, type);
 
 	return 0;
 }

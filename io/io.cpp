@@ -1,7 +1,9 @@
 #include "io.h"
+#include "../consts/consts.h"
 #include <iostream>
 #include <limits>
 #include <cstdlib>
+#include <cassert>
 
 namespace io
 {
@@ -49,6 +51,30 @@ namespace io
 		cin >> input;
 
 		return input;
+	}
+
+	void printSensorConversion(NormalizedValue value, SensorType type)
+	{
+		NormalizedValue convertedValue{};
+		switch (type) {
+		case constants::type::percentCode:
+			convertedValue = value / static_cast<NormalizedValue>(255);
+			cout << "Conversion: " << value << " / 255 -> " << convertedValue << '\n';
+			cout << "Normalized reading: " << convertedValue << '\n';
+			return;
+		case constants::type::tempCode:
+			convertedValue = value / static_cast<NormalizedValue>(1000);
+			cout << "Conversion: " << value << " millidegrees -> " << convertedValue << " degrees";
+			cout << "Normalized reading: " << convertedValue << '\n';
+			return;
+		case constants::type::voltageCode:
+			convertedValue = value;
+			cout << "Conversion: " << convertedValue << " V -> " << convertedValue << '\n';
+			cout << "Normalized reading: " << convertedValue << '\n';
+			return;
+		default:
+			assert(false && "Invalid sensor type");
+		}
 	}
 
 	namespace errors

@@ -17,6 +17,8 @@ namespace io
 	VoltageRawValue getVoltageRawValue();
 	int getPercentRawValue();
 
+	void printSensorConversion(NormalizedValue value, SensorType type);
+
 	namespace errors
 	{
 		void printGetSensorTypeError();
