@@ -8,26 +8,23 @@ int main()
 	io::start();
 
 	const SensorType type{ session::setSensorType() };
-	PercentRawValue percentValue{};
-	TempRawValue tempValue{};
-	VoltageRawValue voltageValue{};
+	NormalizedValue value{};
 
 	switch (type) {
 	case constants::type::percentCode:
-		percentValue = session::setPercentRawValue();
-		std::cout << type << ' ' << percentValue << '\n';
+		value = static_cast<NormalizedValue>(session::setPercentRawValue());
 		break;
 	case constants::type::tempCode:
-		tempValue = session::setTempRawValue();
-		std::cout << type << ' ' << tempValue << '\n';
+		value = static_cast<NormalizedValue>(session::setTempRawValue());
 		break;
 	case constants::type::voltageCode:
-		voltageValue = session::setVoltageRawValue();
-		std::cout << type << ' ' << voltageValue << '\n';
+		value = static_cast<NormalizedValue>(session::setVoltageRawValue());
 		break;
 	default:
 		assert(false && "Invalid sensor type");
 	}
+
+	std::cout << type << ' ' << value << '\n';
 
 	return 0;
 }

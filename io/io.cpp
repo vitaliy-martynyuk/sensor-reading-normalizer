@@ -42,10 +42,10 @@ namespace io
 		return input;
 	}
 
-	PercentRawValue getPercentRawValue()
+	int getPercentRawValue()
 	{
 		cout << "Enter raw sensor value: ";
-		PercentRawValue input{};
+		int input{};
 		cin >> input;
 
 		return input;

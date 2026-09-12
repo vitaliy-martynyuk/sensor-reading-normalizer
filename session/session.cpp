@@ -59,7 +59,7 @@ namespace session
 	PercentRawValue setPercentRawValue()
 	{
 		while (true) {
-			PercentRawValue value{ io::getPercentRawValue() };
+			int value{ io::getPercentRawValue() };
 
 			if (io::helpers::recoverInputStream() || !validate::isPercentRawValueValid(value)) {
 				io::errors::printGetPercentRawValue();
@@ -68,7 +68,7 @@ namespace session
 
 			cout << '\n';
 
-			return value;
+			return static_cast<PercentRawValue>(value);
 		}
 	}
 }

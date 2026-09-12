@@ -9,7 +9,7 @@ namespace validate
 	bool isSensorTypeValid(SensorType type);
 	bool isTempRawValueValid(TempRawValue value);
 	bool isVoltageRawValueValid(VoltageRawValue value);
-	bool isPercentRawValueValid(PercentRawValue value);
+	bool isPercentRawValueValid(int value);
 }
 
 #endif
